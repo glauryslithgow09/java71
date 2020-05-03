@@ -1,0 +1,83 @@
+<!--<!DOCTYPE html>
+<html>
+
+<head>
+    <title>glaurys</title>
+    <meta charset="UTF-8">
+</head>
+
+<body style="background-color: rgb(180, 202, 178);">
+
+    <input type="text" id="text1" name="text1" size="10">
+    <br>
+    <input type="text" id="tex2" name="text2" size="10">
+
+    <script>
+        addEventListener('DOMContentLoaded', inicio, false);
+
+        function inicio() {
+            document.getElementById('text1').addEventListener('focus', tomarfoco1, false);
+            document.getElementById('text2').addEventListener('focus', tomarfoco2, false);
+            document.getElementById('text1').addEventListener('blur', perderfoco1, false);
+            document.getElementById('text2').addEventListener('blur', perderfoco2, false);
+        }
+
+        function tomarfoco1() {
+            document.getElementById('text1').style.color = 'rgb(0, 60, 255)';
+        }
+
+        function tomarfoco2() {
+            document.getElementById('text2').style.color = 'rgb(0, 60, 255)';
+        }
+
+        function perderfoco1() {
+            document.getElementById('text1').style.color = 'rgb(45, 197, 31)';
+        }
+
+        function perderfoco2() {
+            document.getElementById('text2').style.color = 'rgb(45, 197, 31)';
+        }
+    </script>
+
+</body>
+
+</html>-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registrar</title>
+    <meta charset="UTF-8">
+</head>
+
+<body style="background-color: deeppink;">
+
+    <form method="post" action="procesar.php" id="registrar">
+        Ingrese contraseña:
+        <input type="password" id="clave1" name="clave1" size="10" required>
+        <br> Repita contraseña:
+        <input type="password" id="clave2" name="clave2" size="10" required>
+        <br>
+        <input type="submit" id="confirmar" name="Siguiente" value="Siguiente">
+    </form>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', inicio, false);
+
+        function inicio() {
+            document.getElementById("registrar").addEventListener('submit', validar, false);
+        }
+
+        function validar(evt) {
+            var cla1 = document.getElementById("clave1").value;
+            var cla2 = document.getElementById("clave2").value;
+            if (cla1 != cla2) {
+                alert('Las claves ingresadas son diferentes');
+                evt.preventDefault();
+            }
+        }
+    </script>
+
+</body>
+
+</html>
